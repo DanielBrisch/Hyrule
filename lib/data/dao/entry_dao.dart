@@ -2,7 +2,7 @@ import 'package:floor/floor.dart';
 import 'package:hyrule/domain/models/entry.dart';
 
 @dao
-abstract class EntryDAO {
+abstract class EntryDao {
   @Query('SELECT * FROM ENTRY')
   Future<List<Entry>> getAllEntries();
 

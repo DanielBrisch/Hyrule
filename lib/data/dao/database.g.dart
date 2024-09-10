@@ -72,7 +72,7 @@ class _$AppDatabase extends AppDatabase {
     changeListener = listener ?? StreamController<String>.broadcast();
   }
 
-  EntryDAO? _entityDAOInstance;
+  EntryDao? _entityDAOInstance;
 
   Future<sqflite.Database> open(
     String path,
@@ -105,12 +105,12 @@ class _$AppDatabase extends AppDatabase {
   }
 
   @override
-  EntryDAO get entityDAO {
+  EntryDao get entityDAO {
     return _entityDAOInstance ??= _$EntryDAO(database, changeListener);
   }
 }
 
-class _$EntryDAO extends EntryDAO {
+class _$EntryDAO extends EntryDao {
   _$EntryDAO(
     this.database,
     this.changeListener,
